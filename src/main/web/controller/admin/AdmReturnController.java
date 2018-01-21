@@ -46,10 +46,10 @@ public class AdmReturnController {
     public PageBean<BookStudent> list(ModelMap model, BookStudent bookStudent) {
         PageBean<BookStudent> data = new PageBean<BookStudent>();
 
-        if (null == bookStudent.getSno() || "".equals(bookStudent.getSno())){
+        /*if (null == bookStudent.getSno() || "".equals(bookStudent.getSno())){
             data.setData(new ArrayList<BookStudent>());
             return data;
-        }
+        }*/
 
         List<BookStudent> bookStudents = bookStudentDao.find(bookStudent);
         data.setData(bookStudents);

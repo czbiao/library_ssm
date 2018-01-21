@@ -50,13 +50,12 @@ public class AdmBorrowController {
     @ResponseBody
     @RequestMapping(value = "/list", method = {RequestMethod.GET, RequestMethod.POST})
     public PageBean<BookStudent> list(ModelMap model, BookStudent bookStudent) {
-        System.out.println("aaa");
         PageBean<BookStudent> data = new PageBean<BookStudent>();
 
-        if (null == bookStudent.getSno() || "".equals(bookStudent.getSno())){
+        /*if (null == bookStudent.getSno() || "".equals(bookStudent.getSno())){
             data.setData(new ArrayList<BookStudent>());
             return data;
-        }
+        }*/
         List<BookStudent> bookStudents = bookStudentDao.find(bookStudent);
         data.setData(bookStudents);
         System.out.println("进list");
